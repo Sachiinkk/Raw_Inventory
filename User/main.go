@@ -2,16 +2,18 @@ package main
 
 import (
 	databases "github.com/Sachiink/Raw_Shop/config"
+	"github.com/Sachiink/Raw_Shop/models"
+	"github.com/Sachiink/Raw_Shop/routes"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-databases.Connect()
-
+	databases.Connect()
+	godotenv.Load()
+	models.CreateTable(databases.DB)
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{"msg": "Server running on"})
-	})
+	routes.SetupRoutes(r)
 	r.Run(":8080")
 
 }
