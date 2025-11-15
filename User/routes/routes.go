@@ -14,7 +14,7 @@ func SetupRoutes(r *gin.Engine) {
 		controller.Singup(c, db)
 	})
 
-	r.GET("/signin", func(c *gin.Context) {
+	r.GET("/login", func(c *gin.Context) {
 		controller.SignIn(c, db)
 	})
 
