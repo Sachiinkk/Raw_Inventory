@@ -6,7 +6,8 @@ type User struct {
 	Id       int    `json:"id"`
 	Username string `json:"username" validator:"require , min =3"`
 	Email    string `json:"email" binding:"required,email"`
-	Password string `json:"password" binding:"required,min =6"`
+	Role     string `json:"role"  validator:"require"`
+	Password string `json:"password" binding:"required,min=6"`
 }
 
 func CreateTable(db *sql.DB) error {
