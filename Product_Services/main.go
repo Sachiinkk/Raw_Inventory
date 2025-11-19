@@ -2,8 +2,8 @@ package main
 
 import "github.com/gin-gonic/gin"
 
-func main(){
+func main() {
 	r := gin.Default()
 
-	r.Run(":8000")
+	r.Run(":8001")
 }
