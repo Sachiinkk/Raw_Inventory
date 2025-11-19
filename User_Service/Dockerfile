@@ -18,4 +18,4 @@ RUN go build -o user_service .
 EXPOSE 8080
 
 # Run the executable
-CMD ["./user_services"]
+CMD ["./user_service"]
